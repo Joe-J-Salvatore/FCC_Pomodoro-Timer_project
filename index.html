@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>00:00:00 Timer</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400|Work+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background">
+      <img src="Images/tomato_vine.png">
+    </div>
+    <h1>Tomato Task Timer</h1>
+    <div class="timer_controls">
+      <button data-time="1500">25min</button>
+      <button data-time="180">3min</button>
+      <button data-time="300">5min</button>
+      <button data-time="1800">30min</button>
+      <form name="custom_time">
+        <input type="text" name="minutes" placeholder="Enter minutes">
+      </form>
+    </div>
+    <h3>Perform task for 25 minutes, then take a three to five minute break</h3>
+    <h4>P.S. Your countdown timer will appear on this tab</h4>
+    <div class="display">
+      <h1 class="display_time">00:00:00</h1>
+    </div>
+    <h3>When you complete four tasks take a 30 minute break</h3>
+    <div class="to-dos">
+      <form name="todo_entry">
+        <input type="text" name="todo" placeholder="Enter task">
+      </form>
+      <ul id="todo_list"></ul>
+    </div>
+</body>
+  <script src="script.js"></script>
+</html>
