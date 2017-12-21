@@ -90,7 +90,7 @@ document.todo_entry.addEventListener('submit', function(e) {
 	todoList.style.listStyle = 'none';
 	let li = document.createElement('li');
 	li.appendChild(document.createTextNode(todo));
-	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" id="checkmark" onclick="isChecked()"><span class="checkmark"></span>&nbsp;');
+	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" id="checkmark" onclick="isChecked()">&nbsp;');
 	
 	this.reset();
 });

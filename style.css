@@ -1,7 +1,6 @@
 body {
   margin: 10% 5%;
   padding: 0;
-
 }
 #background {
   position: absolute;
@@ -10,7 +9,7 @@ body {
   top: 0;
   left: 40%;
   z-index: -1;
-  filter: blur(10px) saturate(80%);
+  filter: blur(30px) saturate(80%);
 }
 img {
   height: 150%;
@@ -26,7 +25,6 @@ h3, h4 {
   text-align: center;
 }
 .timer_controls {
-  background-color: blue;
   display: flex;
   width: 100%;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
@@ -37,12 +35,12 @@ button {
   border-top: none;
   border-bottom: none;;
   border-left: none;
-  border-right: 0.1px solid rgba(0, 0, 0, 0.8);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.8);
   background-color: black;
   color: white;
+  font-family: 'Work Sans', sans-serif;
 }
 .to-dos {
-  background-color: yellow;
   width: 100%;
   height: 40px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
@@ -52,11 +50,17 @@ form {
   height: 40px;
 }
 input[type="text"] {
-  height: 100%;
+  height: 95%;
   width: 100%;
-  padding: 0 0 0 5px;
   border: none;
   background-color: #dacdc7;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2em;
+  outline: none;
+}
+input[name='todo'] {
+  background-color: black;
+  color: white;
 }
 ::-webkit-input-placeholder { /* Chrome */
   color: black;
@@ -72,31 +76,59 @@ input[type="text"] {
   color: black;
   opacity: 1;
 }
+input[name='todo']::-webkit-input-placeholder { /* Chrome */
+  color: white;
+}
+input[name='todo']:-ms-input-placeholder { /* IE 10+ */
+  color:white;
+}
+input[name='todo']::-moz-placeholder { /* Firefox 19+ */
+  color:white;
+  opacity: 1;
+}
+input[name='todo']:-moz-placeholder { /* Firefox 4 - 18 */
+  color: white;
+  opacity: 1;
+}
+input[name='todo']:focus {
+  background-color: white;
+  color: black;
+}
+input[name='minutes']:focus {
+  background-color: black;
+  color: white;
+}
 li {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   text-align: left;
 }
 input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
+  position: relative;
   margin: 0;
-  left: 35px;
+  top: 8px;
   height: 25px;
   width: 25px;
   z-index: 1;
+  cursor: pointer;
 }
-.checkmark {
+@media only screen and (max-width: 535px) {
+  input[name='minutes'] {
+    font-size: 1em;
+  }
+}
+
+/* .checkmark {
   position: absolute;
   left: 35px;
   height: 25px;
   width: 25px;
   background-color: lightgray;
-}
-li:hover input ~ .checkmark{
+} */
+/* #checkmark:hover {
   background-color: darkgray;
 }
-li input:checked ~ .checkmark {
+li input:checked {
   background-color: black;
 }
 li .checkmark:after {
@@ -117,4 +149,4 @@ li .checkmark:after {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
