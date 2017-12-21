@@ -67,6 +67,20 @@ document.custom_time.addEventListener('submit', function(e) {
 	this.reset();
 });
 
+// if todo is checked: strike through task; else unstrike
+function isChecked() {
+	const ckBx = document.querySelector('#checkmark');
+	const item = document.getElementsByTagName('li');
+	for (let i = 0; i < item.length; i++) {
+		//console.log(item[i]);
+		if (ckBx.checked) {
+			item[i].style.textDecoration = 'line-through';
+		} else {
+			item[i].style.textDecoration = 'none';
+		}
+	}
+}
+
 // Add todo items (from input to list) with checkbox
 document.todo_entry.addEventListener('submit', function(e) {
 	e.preventDefault();
@@ -76,7 +90,7 @@ document.todo_entry.addEventListener('submit', function(e) {
 	todoList.style.listStyle = 'none';
 	let li = document.createElement('li');
 	li.appendChild(document.createTextNode(todo));
-	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" id="checkmark"><span class="checkmark"></span>&nbsp;');
+	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" id="checkmark" onclick="isChecked()"><span class="checkmark"></span>&nbsp;');
 	
 	this.reset();
 });
