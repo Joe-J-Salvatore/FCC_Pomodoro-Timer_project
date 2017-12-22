@@ -69,16 +69,24 @@ document.custom_time.addEventListener('submit', function(e) {
 
 // if todo is checked: strike through task; else unstrike
 function isChecked() {
-	const ckBx = document.querySelector('#checkmark');
-	const item = document.getElementsByTagName('li');
+	// const ckBx = document.querySelector('input[type="checkbox"]');
+	//console.log(ckBx);
+	const checkBox = document.querySelectorAll('input[type="checkbox"]');
+	const item = document.querySelectorAll('li');
+	let count = 0;
 	for (let i = 0; i < item.length; i++) {
-		//console.log(item[i]);
-		if (ckBx.checked) {
+		if (checkBox[i].checked) {
 			item[i].style.textDecoration = 'line-through';
+			count += 1;
 		} else {
 			item[i].style.textDecoration = 'none';
 		}
 	}
+	if (count === 4) {
+		let ul = document.querySelector('ul');
+		ul.innerHTML = 'Nice work!'+'\n'+'Enjoy your extended break.';
+	}
+	console.log(count);
 }
 
 // Add todo items (from input to list) with checkbox
@@ -90,7 +98,7 @@ document.todo_entry.addEventListener('submit', function(e) {
 	todoList.style.listStyle = 'none';
 	let li = document.createElement('li');
 	li.appendChild(document.createTextNode(todo));
-	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" id="checkmark" onclick="isChecked()">&nbsp;');
+	todoList.appendChild(li).insertAdjacentHTML('afterbegin', '<input type="checkbox" onclick="isChecked()">&nbsp;');
 	
 	this.reset();
 });

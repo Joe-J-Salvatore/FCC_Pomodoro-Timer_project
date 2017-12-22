@@ -18,6 +18,10 @@ h1 {
   font-variant: small-caps;
   font-family: 'Work Sans', sans-serif;
   text-align: center;
+  font-size: 2.5em;
+}
+.redT {
+  color: tomato;
 }
 h3, h4 {
   font-family: 'Raleway', sans-serif;
@@ -39,6 +43,14 @@ button {
   background-color: black;
   color: white;
   font-family: 'Work Sans', sans-serif;
+  outline: none;
+}
+button:hover {
+  background-color: slategray;
+}
+button:focus {
+  background-color: lightgray;
+  color: black;
 }
 .to-dos {
   width: 100%;
@@ -98,6 +110,11 @@ input[name='minutes']:focus {
   background-color: black;
   color: white;
 }
+ul {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
 li {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -117,36 +134,3 @@ input[type="checkbox"] {
     font-size: 1em;
   }
 }
-
-/* .checkmark {
-  position: absolute;
-  left: 35px;
-  height: 25px;
-  width: 25px;
-  background-color: lightgray;
-} */
-/* #checkmark:hover {
-  background-color: darkgray;
-}
-li input:checked {
-  background-color: black;
-}
-li .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-li input:checked ~ .checkmark:after {
-  display: block;
-}
-li .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
