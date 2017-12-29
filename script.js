@@ -4,6 +4,8 @@ const buttons = document.querySelectorAll('[data-time]');
 
 // set interval function
 function timer(seconds) {
+	let isPaused = false;
+	let offset = 0;
 	// clear existing timers
 	clearInterval(countdown);
 
@@ -19,6 +21,33 @@ function timer(seconds) {
 		}
 		displayTimeRemaining(secondsRemain);
 	}, 1000);
+	// pause button
+	let pauseTimer = document.getElementById('pause-text');
+	pauseTimer.addEventListener('click', function(e) {
+		e.preventDefault();
+		isPaused = !isPaused;
+		let paused = displayTimer.textContent;
+		const regex = /[0-9]{2}/g;
+		let hours;
+		let minutes;
+		let seconds;
+		let secResume = 0;
+
+		let array = paused.match(regex, '$1, $2, $3');
+		hours = parseInt(array[0]) * 360;
+		minutes = parseInt(array[1]) * 60;
+		seconds = parseInt(array[2]);
+		secResume = hours + minutes + seconds;
+
+		console.log(hours, minutes, seconds);
+		console.log(secResume);
+		
+		if (isPaused) {
+			clearInterval(countdown);
+		} else {
+			timer(secResume);
+		}
+	});
 }
 
 // display timer function
@@ -62,15 +91,12 @@ buttons.forEach(button => button.addEventListener('click', startTimer));
 document.custom_time.addEventListener('submit', function(e) {
 	e.preventDefault();
 	const mins = this.minutes.value;
-	console.log(mins);
 	timer(mins * 60);
 	this.reset();
 });
 
 // if todo is checked: strike through task; else unstrike
 function isChecked() {
-	// const ckBx = document.querySelector('input[type="checkbox"]');
-	//console.log(ckBx);
 	const checkBox = document.querySelectorAll('input[type="checkbox"]');
 	const item = document.querySelectorAll('li');
 	let count = 0;
