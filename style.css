@@ -44,8 +44,9 @@ button.pause {
 p#pause-text {
   position: absolute;
   display: inline;
-  margin-left: -35px;
-  font-family: 'Raleway', sans-serif;
+  margin-top: 25px;
+  margin-left: -38px;
+  font-family: 'Work Sans', sans-serif;
   font-weight: bold;
 }
 /* button#stop {
@@ -76,15 +77,20 @@ button#pause {
 }
 h1 {
   font-variant: small-caps;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Paytone One', sans-serif;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
 }
 .redT {
   color: tomato;
 }
+h1.display_time {
+  font-family: 'Paytone One', sans-serif;
+  text-align: center;
+  font-size: 3em;
+}
 h3, h4 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 300;
   text-align: center;
 }
@@ -171,18 +177,15 @@ input[name='minutes']:focus {
   color: white;
 }
 ul {
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
+  display: flex;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.5em;
-}
-li {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
   text-align: left;
+  padding: 0;
 }
 input[type="checkbox"] {
   position: relative;
-  margin: 0;
+  margin: 0 0 0 15px;
   top: 8px;
   height: 25px;
   width: 25px;

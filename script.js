@@ -34,13 +34,13 @@ function timer(seconds) {
 		let secResume = 0;
 
 		let array = paused.match(regex, '$1, $2, $3');
-		hours = parseInt(array[0]) * 360;
+		hours = parseInt(array[0]) * 3600;
 		minutes = parseInt(array[1]) * 60;
 		seconds = parseInt(array[2]);
 		secResume = hours + minutes + seconds;
 
-		console.log(hours, minutes, seconds);
-		console.log(secResume);
+		//console.log(hours, minutes, seconds);
+		//console.log(secResume);
 		
 		if (isPaused) {
 			clearInterval(countdown);
